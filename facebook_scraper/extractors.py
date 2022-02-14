@@ -1236,7 +1236,7 @@ class PostExtractor:
             url = self.post.get('post_id')
             logger.debug(f"Fetching {url}")
             try:
-                response = self.request(url)
+                response = self.request(str(url))
             except exceptions.NotFound as e:
                 url = self.post.get('post_url').replace(FB_BASE_URL, FB_MOBILE_BASE_URL)
                 logger.debug(f"Fetching {url}")
